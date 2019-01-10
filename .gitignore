@@ -1,4 +1,7 @@
 db.sqlite3
 .vscode
 *.pyc
+*.egg-info
 media
+dist
+build

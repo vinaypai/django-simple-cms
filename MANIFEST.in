@@ -1,0 +1,2 @@
+recursive-include cms *
+global-exclude *.pyc __pycache__
