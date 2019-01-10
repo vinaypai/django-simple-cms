@@ -1,0 +1,11 @@
+{% include 'cms/includes/blog_header.html' %}
+
+{% for entry in entries %}
+  {% if forloop.first %}
+    {% include 'cms/includes/featured_post.html' %}
+  {% else %}
+    {% include 'cms/includes/blog_index_entry.html' %}
+  {% endif %}
+{% empty %}
+  <p>No blog entries yet.</p>
+{% endfor %}

@@ -1,0 +1,14 @@
+{% load static %}<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:'en-us' }}">
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    {% block og_meta_tags %}{% endblock %}
+  </head>
+  <body>
+    {% block cms_container %}
+    <div class="container">
+      {% block page_content %}{% endblock %}
+    </div>
+    {% endblock %}
+  </body>
+</html>

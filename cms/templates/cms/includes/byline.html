@@ -1,0 +1,3 @@
+{% if page.author %}
+<p class="byline">by <a href="mailto:{{page.author.email}}">{{page.author.get_full_name|default:page.author.username}}</a>.</p>
+{%endif %}

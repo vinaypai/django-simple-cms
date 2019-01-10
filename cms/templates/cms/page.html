@@ -1,0 +1,25 @@
+{% extends 'cms/base.html' %}
+
+{% block title %}{{page.title}}{% endblock %}
+{% block meta-description %}{{page.description}}{% endblock %}
+
+{% block og_meta_tags %}
+<meta property="og:title" content="{{page.title}}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{BASE_URL}}{{page.get_absolute_url}}">
+<meta property="og:description" content="{{page.description}}">
+{% if page.featured_image %}<meta property="og:image" content="{{BASE_URL}}{{page.featured_image.url}}">{% endif %}
+{% endblock %}
+
+{% block page_content %}
+<h1 itemprop="headline">{{page.title}}</h1>
+<article>
+  {% include 'cms/includes/byline.html' %}
+  {% if page.featured_image %}
+    <img id="featured-image" src="{{page.featured_image.url}}">
+  {% endif %}
+  <main>
+    {{page.body|safe}}
+  </main>
+</article>
+{% endblock %}

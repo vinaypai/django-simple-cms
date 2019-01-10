@@ -1,0 +1,8 @@
+<h4><a href="{{entry.get_absolute_url}}">{{entry.title}}</a></h4>
+{% if entry.featured_image %}
+  <a href="{{entry.get_absolute_url}}">
+    <img src="{{entry.featured_image.url}}">
+  </a>
+{% endif %}
+
+<p>{{entry.description}}</p>
