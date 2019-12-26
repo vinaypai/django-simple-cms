@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='django-simple-cms',
-    version='0.1.2',
+    version='0.1.3',
     author='Vinay Pai',
     author_email='vinay@vinaypai.com',
     description='A simple  CMS for django',
