@@ -1,5 +1,5 @@
 """Models for CMS pages and navigation menus"""
-from django.contrib.auth.models import User
+from django.conf import settings
 from django.db import models
 from django.urls import reverse
 
@@ -10,7 +10,7 @@ from mptt.models import MPTTModel
 class Page(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField()
-    author = models.ForeignKey(User, on_delete=models.PROTECT)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
     body = models.TextField()
     description = models.TextField()
     blog_entry = models.BooleanField(default=False)
